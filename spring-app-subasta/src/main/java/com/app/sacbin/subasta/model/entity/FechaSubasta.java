@@ -2,6 +2,8 @@ package com.app.sacbin.subasta.model.entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +20,7 @@ public class FechaSubasta implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private LocalDate fecha;
+	@Column(length = 2)
 	private String status;
 	
 

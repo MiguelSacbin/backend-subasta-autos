@@ -2,6 +2,8 @@ package com.app.sacbin.subasta.model.entity;
 
 import java.io.Serializable;
 import java.time.LocalTime;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +19,10 @@ public class HoraSubasta implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private LocalTime hora;
+	@Column(name = "hora_inicio")
+	private LocalTime horaInicio;
+	@Column(name = "hora_fin")
+	private LocalTime horaFin;
 	private String status;
 
 	public Long getId() {
@@ -28,12 +33,20 @@ public class HoraSubasta implements Serializable {
 		this.id = id;
 	}
 
-	public LocalTime getHora() {
-		return hora;
+	public LocalTime getHoraInicio() {
+		return horaInicio;
 	}
 
-	public void setHora(LocalTime hora) {
-		this.hora = hora;
+	public void setHoraInicio(LocalTime horaInicio) {
+		this.horaInicio = horaInicio;
+	}
+
+	public LocalTime getHoraFin() {
+		return horaFin;
+	}
+
+	public void setHoraFin(LocalTime horaFin) {
+		this.horaFin = horaFin;
 	}
 
 	public String getStatus() {

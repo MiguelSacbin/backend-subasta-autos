@@ -23,6 +23,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
 	public void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 		.antMatchers(HttpMethod.GET,"/api/usuario").hasRole("USER")
+		.antMatchers(HttpMethod.GET,"/api/fecha/**").hasRole("ADMIN")
 		.antMatchers("/api/usuario/**").hasRole("ADMIN")
 		.anyRequest().authenticated()
 		.and().cors().configurationSource(corsConfigurationSource());
